@@ -1,0 +1,199 @@
+/* Glube Rulse */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(90deg, #222, #111);
+}
+.continer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 20px;
+}
+
+/* Main Heading */
+h2 {
+  font-size: 40px;
+  margin: 10px auto 20px;
+  border: 5px solid #333;
+  color: #333;
+  padding: 5px 15px;
+  user-select: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  transition-duration: 0.3s;
+  position: relative;
+}
+h2::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition-duration: 0.3s;
+  z-index: -1;
+  background-color: #111;
+  box-shadow: inset 5px 5px 7px rgba(0, 0, 0, 0.2),
+    inset -5px -5px 7px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+h2:hover::before {
+  width: 100%;
+}
+h2:hover {
+  color: white;
+  border-color: #111;
+}
+
+/* Main Continer The Images */
+.galary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  overflow: hidden;
+  padding: 50px;
+  place-items: center;
+  background-color: #222;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  position: relative;
+}
+
+/* Border Animation */
+.galary::before {
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 200%;
+    background-image: linear-gradient(90deg, #f25f,#e75e);
+    animation: move 8s ease-in-out infinite;
+    -webkit-animation: move 8s ease-in-out infinite;
+}
+@keyframes move {
+    to {
+        transform: rotate(1turn);
+        -webkit-transform: rotate(1turn);
+        -moz-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+        -o-transform: rotate(1turn);
+}
+}
+.galary::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    background-color: #222;
+    border-radius: 99px;
+    -webkit-border-radius: 99px;
+    -moz-border-radius: 99px;
+    -ms-border-radius: 99px;
+    -o-border-radius: 99px;
+}
+
+/* The Images Of Galary-Continer */
+.galary .images {
+  overflow: hidden;
+  height: 300px;
+  border: 6px solid #333;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  justify-content: center;
+  background-color: #111;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.galary .images img {
+  width: 100%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+.galary img:hover {
+  transform: rotate(5deg) scale(1.1);
+  -webkit-transform: rotate(5deg) scale(1.1);
+  -moz-transform: rotate(5deg) scale(1.1);
+  -ms-transform: rotate(5deg) scale(1.1);
+  -o-transform: rotate(5deg) scale(1.1);
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
+/* Box Show Image And Controle */
+.show-image {
+  display: none;
+}
+.show {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  background-color: rgba(34, 34, 34, 0.4);
+  gap: 10px;
+  top: 0;
+}
+.show span {
+  font-size: 60px;
+  color: white;
+  cursor: pointer;
+  transition-duration: 0.3;
+}
+.show span:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+.show span:active {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+
+/* Close The Box Show */
+#close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: crimson;
+}
+
+/* Add Desaboled-Class Button Next If Max Or Prev If Min */
+.des {
+  opacity: 0.5;
+  pointer-events: none;
+}
