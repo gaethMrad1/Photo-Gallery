@@ -67,7 +67,7 @@ h2:hover {
 .galary {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 15px;
   overflow: hidden;
   padding: 50px;
@@ -80,6 +80,11 @@ h2:hover {
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
   position: relative;
+}
+@media (max-width: 576px) {
+  .galary {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 
 /* Border Animation */
