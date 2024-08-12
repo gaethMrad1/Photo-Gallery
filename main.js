@@ -50,4 +50,7 @@ function check() {
 // Close The Box-Show On Click Close Button
 Close.onclick = function () {
   Show.classList.remove("show");
+  length = 0;
+  Next.classList.remove("des")
+  Prev.classList.remove("des")
 };
