@@ -14,6 +14,11 @@ let Prev = document.getElementById("prev");
 // Show The Image On Click
 images.forEach(function (img) {
   img.onclick = function () {
+    if (this === images[0]) {
+      Prev.classList.add("des");
+    } else if (this === images[images.length - 1]) {
+      Next.classList.add("des");
+    }
     Show.classList.add("show");
     Show.children[1].src = this.src;
     length = images.indexOf(this);
