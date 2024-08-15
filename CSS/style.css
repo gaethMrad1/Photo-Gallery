@@ -183,6 +183,9 @@ h2:hover {
 .show #next {
   right: 0;
 }
+.show img {
+  user-select: none;
+}
 @media (max-width: 576px) {
   .show img {
     width: 100%;
